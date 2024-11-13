@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToyStore - Catálogo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <nav>
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html"><span class="logo-highlight">Toy</span>Store</a>
+                </div>
+                <ul>
+                    <li><a href="products.html">Catálogo</a></li>
+                </ul>
+                <div class="cart-icon">
+                    <a href="javascript:void(0);" onclick="openCartModal()">Carro 🛒 <span id="cart-count">0</span></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Catálogo de Productos</h1>
+        <div class="product-list">
+            <div class="product-card">
+                <img src="images/oso.jpg" alt="Osito de peluche">
+                <h2>Osito de peluche</h2>
+                <p class="price">$30.00 USD</p>
+                <button onclick="addToCart(1, 'Osito de peluche', 30.00,'images/oso.jpg')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/tractor.png" alt="Tractor de madera">
+                <h2>Tractor de madera</h2>
+                <p class="price">$22.00 USD</p>
+                <button onclick="addToCart(9, 'Tractor de madera', 22.00,'images/tractor.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/mega.png" alt="Mega peluche">
+                <h2>Mega peluche</h2>
+                <p class="price">$38.00 USD</p>
+                <button onclick="addToCart(3, 'Mega peluche', 38.00,'images/mega.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/maquina.png" alt="Máquina de elevación">
+                <h2>Máquina de elevación</h2>
+                <p class="price">$24.00 USD</p>
+                <button onclick="addToCart(4, 'Máquina de elevación', 24.00,'images/maquina.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/ciervo.png" alt="Ciervo de Navidad">
+                <h2>Ciervo de Navidad</h2>
+                <p class="price">$19.00 USD</p>
+                <button onclick="addToCart(5, 'Ciervo de Navidad', 19.00,'images/ciervo.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/camion.png" alt="Camión Arco Iris">
+                <h2>Camión Arco Iris</h2>
+                <p class="price">$28.00 USD</p>
+                <button onclick="addToCart(6, 'Camión Arco Iris', 28.00,'images/camion.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/conejito.png" alt="Conejito">
+                <h2>Conejito</h2>
+                <p class="price">$16.00 USD</p>
+                <button onclick="addToCart(7, 'Conejito', 16.00,'images/conejito.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/amiguito.png" alt="Amiguito">
+                <h2>Amiguito</h2>
+                <p class="price">$27.00 USD</p>
+                <button onclick="addToCart(8, 'Amiguito', 27.00,'images/amiguito.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/Flor.png" alt="Flor Feliz">
+                <h2>Flor Feliz</h2>
+                <p class="price">$38.00 USD</p>
+                <button onclick="addToCart(2, 'Flor Feliz', 38.00,'images/Flor.png')">Añadir al Carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="images/perro.png" alt="Plutón Perro Amarillo">
+                <h2>Plutón Perro Amarillo</h2>
+                <p class="price">$28.00 USD</p>
+                <button onclick="addToCart(10, 'Plutón Perro Amarillo', 28.00,'images/perro.png')">Añadir al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Carrito Modal -->
+        <div id="cartModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Su Carrito</h2>
+                <div id="cartItems">
+                    <!-- Plantilla de ejemplo para un producto en el carrito -->
+                    <div class="cart-item">
+                        <img src="images/mega.png" alt="Imagen del producto" class="cart-item-image">
+                        <div class="cart-item-details">
+                            <strong>Mega peluche</strong>
+                            <p>$38.00 USD</p>
+                            <a href="#" class="remove-item">Eliminar</a>
+                        </div>
+                        <input type="number" value="1" class="quantity-input">
+                    </div>
+                </div>
+                <p id="subtotal">Subtotal: $0.00 USD</p>
+                <button onclick="checkout()" class="checkout-button">Continuar con el proceso de pago</button>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 ToyStore. Todos los derechos reservados.</p>
+                <p><a href="privacy.html">Política de Privacidad</a> | <a href="terms.html">Términos y Condiciones</a></p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="cart.js"></script>
+</body>
+</html>

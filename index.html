@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToyStore - Tienda Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <header>
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="images/logo.png" alt="ToyStore Logo">
+            </div>
+            <!-- Barra de Búsqueda -->
+            <div class="search-bar">
+                <input type="text" placeholder="Diversión al alcance de un clic...">
+                <button type="submit"><img src="images/icon-buscar.png" alt="Buscar"></button>
+            </div>
+        </div>
+
+        <nav class="navbar-bottom">
+            <div class="location">
+                <span>📍 Ingresa tu ubicación</span>
+            </div>
+            <ul class="nav-links">
+                <!-- Categorías con submenús -->
+                <li class="dropdown">
+                    <a>Categorías</a>
+                    <ul class="dropdown-menu">
+                        <!-- Muñecas y Figuras de Acción -->
+                        <li class="sub-dropdown">
+                            <a>Muñecas y Figuras de Acción &gt;</a>
+                            <ul class="sub-dropdown-menu">
+                                <li><a href="#">Muñecas y Accesorios</a></li>
+                                <li><a href="#">Figuras de Superhéroes</a></li>
+                                <li><a href="#">Personajes de Series y Películas</a></li>
+                            </ul>
+                        </li>
+                        <!-- Vehículos y Pistas -->
+                        <li class="sub-dropdown">
+                            <a>Vehículos y Pistas &gt;</a>
+                            <ul class="sub-dropdown-menu">
+                                <li><a href="#">Carros y Camiones</a></li>
+                                <li><a href="#">Trenes y Vías</a></li>
+                                <li><a href="#">Aviones y Naves Espaciales</a></li>
+                                <li><a href="#">Pistas y Circuitos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Construcción y Bloques</a></li>
+                        <li><a href="#">Arte y Manualidades</a></li>
+                        <li><a href="#">Juguetes Educativos</a></li>
+                        <!-- Juegos de Mesa y Cartas -->
+                        <li class="sub-dropdown">
+                            <a>Juegos de Mesa y Cartas &gt;</a>
+                            <ul class="sub-dropdown-menu">
+                                <li><a href="#">Clásicos (Ajedrez, Damas)</a></li>
+                                <li><a href="#">Cartas Coleccionables</a></li>
+                                <li><a href="#">Juegos de Estrategia</a></li>
+                                <li><a href="#">Juegos Familiares</a></li>
+                            </ul>
+                        </li>
+                        <!-- Peluches y Juguetes de Tela -->
+                        <li class="sub-dropdown">
+                            <a>Peluches y Juguetes de Tela &gt;</a>
+                            <ul class="sub-dropdown-menu">
+                                <li><a href="#">Osos de Peluche</a></li>
+                                <li><a href="#">Animales Fantásticos</a></li>
+                                <li><a href="#">Almohadas y Cojines</a></li>
+                                <li><a href="#">Muñecos de Trapo</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Deportes y Aire Libre</a></li>
+                        <!-- Electrónicos e Interactivos -->
+                        <li class="sub-dropdown">
+                            <a>Electrónicos e Interactivos &gt;</a>
+                            <ul class="sub-dropdown-menu">
+                                <li><a href="#">Robots y Drones</a></li>
+                                <li><a href="#">Consolas y Videojuegos</a></li>
+                                <li><a href="#">Tablets para Niños</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Instrumentos Musicales</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about-section">Acerca de</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#">Crea tu cuenta</a></li>
+                <li><a href="#">Ingresa</a></li>
+                <li><a href="#">Mis compras</a></li>
+                <li class="cart-icon">
+                    <a href="javascript:void(0);" onclick="openCartModal()">🛒 <span id="cart-count">0</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!-- Carrito Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Su Carrito</h2>
+            <div id="cartItems">
+                <!-- Plantilla de ejemplo para un producto en el carrito -->
+                <div class="cart-item">
+                    <img src="images/mega.png" alt="Imagen del producto" class="cart-item-image">
+                    <div class="cart-item-details">
+                        <strong>Mega peluche</strong>
+                        <p>$38.00 USD</p>
+                        <button class="remove-item-button" onclick="removeItem()">Eliminar</button>
+                    </div>
+                    <input type="number" value="1" class="quantity-input">
+                </div>
+            </div>
+            <p id="subtotal">Subtotal: $0.00 USD</p>
+            <button onclick="checkout()" class="checkout-button">Continuar con el proceso de pago</button>
+        </div>
+    </div>
+    
+
+
+    <!-- Contenido principal -->
+    <main>
+        <div class="hero" style="background-image: url('images/principal.jpg'); background-size: cover; background-position: center; height: 80vh;">
+            <div class="hero-content">
+                <p class="intro-text">¡Bienvenido a ToyStore!</p>
+                <h1>La mejor tienda <br>de productos <br>para niños</h1>
+                <button class="catalog-button" onclick="window.location.href='products.html'">Ver Catálogo</button>
+            </div>
+        </div>
+
+        <!-- Sección Acerca de -->
+        <section id="about-section" class="about">
+            <div class="about-content">
+                <img src="images/mono.jpg" alt="Imagen de juguetes">
+                <div class="about-text">
+                    <h2>¡Todo lo que necesitas es diversión!</h2>
+                    <p>Presentación de ToyStore</p>
+                    <p>Un plan de marketing exitoso depende en gran medida del poder de atracción del texto publicitario. Escribir un texto publicitario orientado a resultados es difícil, ya que debe atraer, seducir y convencer a los consumidores para que actúen.</p>
+                </div>
+            </div>
+
+             <div class="about-extra">
+                <img src="images/res.jpg" alt="Juguetes educativos" class="about-extra-image">
+                <div class="about-extra-text">
+                    <h2>100% Responsivo</h2>
+                    <p>Un plan de marketing exitoso depende en gran medida del poder de atracción del texto publicitario. Escribir un texto publicitario orientado a resultados es difícil, ya que debe atraer, seducir y convencer a los consumidores para que actúen. No existe una fórmula mágica para escribir un texto publicitario perfecto.</p>
+                    <a href="products.html" class="explore-link">Explora nuestros juguetes →</a>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        
+        
+        <!-- Sección de Contacto -->
+        <section id="contacto" class="contact-section">
+            <div class="contact-container">
+                <!-- Formulario de contacto -->
+                <div class="contact-form">
+                    <h2>Deja un mensaje</h2>
+                    <form>
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+        
+                        <label for="email">Dirección de correo electrónico</label>
+                        <input type="email" id="email" placeholder="Tu correo electrónico de contacto" required>
+        
+                        <label for="mensaje">Texto del mensaje</label>
+                        <textarea id="mensaje" rows="5" placeholder="Texto del mensaje..." required></textarea>
+        
+                        <button type="submit" class="send-button">Enviar mensaje</button>
+                    </form>
+                </div>
+                
+                <!-- Información de contacto -->
+                <div class="contact-info">
+                    <h3>Información de contacto</h3>
+                    <p>4293 Euclid Avenue, Los Ángeles, CA 90012</p>
+                    <p>+1 213 974-3898</p>
+                    <p><a href="mailto:toystore@template.com">toystore@template.com</a></p>
+        
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2024 ToyStore. Todos los derechos reservados.</p>
+                <p>Política de Privacidad | Términos y Condiciones</p>
+            </div>
+        </footer>
+        
+
+    </main>
+    <script src="cart.js"></script>
+</body>
+</html>

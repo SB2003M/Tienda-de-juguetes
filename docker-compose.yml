@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    container_name: ToyStore
+    volumes:
+      - .:/usr/share/nginx/html  # Sincroniza los archivos locales con los del contenedor
+    ports:
+      - "80:80"  # Mapea el puerto 80 del contenedor al 80 del host
+    restart: always  # Asegura que el contenedor se reinicie si falla
